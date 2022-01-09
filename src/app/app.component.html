@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+<div>
+  <ng-container *ngIf="isLoaded">
+    <mat-grid-list cols = "3" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let city of cities">        
+          <mat-card style="text-align: center;">
+            <mat-card-header>
+              <mat-card-title>{{city}}</mat-card-title>          
+            </mat-card-header>
+            <img mat-card-image class="profile_image"  *ngIf="city == 'Santiago'" src="https://storage.googleapis.com/chile-travel-newsite-static-content/2021/08/Vitrina_Centro_santiago-1.jpg"  >
+            <img mat-card-image class="profile_image" *ngIf="city == 'Zurich'" src="https://www.lavanguardia.com/files/image_948_465/uploads/2018/05/16/5fa436e1d0fb8.jpeg" >
+            <img mat-card-image class="profile_image" *ngIf="city == 'Auckland'" src="https://wp-growpro.s3-eu-west-1.amazonaws.com/media/2019/11/Experiencias-GrowPro-en-Auckland.jpg"  >
+            <img mat-card-image class="profile_image" *ngIf="city == 'London'" src="https://images.musement.com/cover/0002/49/london-jpeg_header-148518.jpeg?w=1200&h=630&q=95&fit=crop" >
+            <img mat-card-image class="profile_image"*ngIf="city == 'Georgia'" src="https://cdn.getyourguide.com/img/location/5a0860dae5cd4.jpeg/92.jpg" >
+            <img mat-card-image class="profile_image" *ngIf="city == 'Sydney'" src="https://www.latamairlines.com/content/dam/latamxp/seo/SYD.jpg">
+            <mat-card-content>
+              <p style="font-size: 20px ;">Temperatura: {{messages[city]['temp']}}°C</p>
+              <p style="font-size: 20px ;">Hora: {{messages[city]['local_time']}}</p>
+            </mat-card-content>
+          </mat-card>  
+      </mat-grid-tile>      
+    </mat-grid-list>
+    
+  </ng-container>   
+</div>
+
